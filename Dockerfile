@@ -34,6 +34,7 @@ RUN apt install -y devscripts autotools-dev autogen dh-autoreconf dkms doxygen c
             libdlm-dev libudev-dev asciidoc-dblatex source-highlight libiscsi-dev \
             libiscsi7 librsvg2-bin libarchive-dev libgpgme-dev libcurl4-gnutls-dev \
             libtest-mockmodule-perl libjemalloc-dev libjpeg-dev
+RUN apt install -y proxmox-default-kernel
 RUN apt remove -y linux-image-amd64 'linux-image-6.12*'
-RUN apt install -y proxmox-default-kernel proxmox-ve postfix open-iscsi chrony
+RUN apt install -y debhelper-compat python3 python3-venv meson ninja-build flex bison python3-sphinx python3-sphinx-rtd-theme
 RUN git config --global url."https://github.com/tianocore/edk2-subhook.git".insteadOf https://github.com/Zeex/subhook.git
